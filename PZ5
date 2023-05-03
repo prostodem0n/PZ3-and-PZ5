@@ -1,0 +1,81 @@
+using System;
+
+namespace Prog
+{
+    class Program
+    {
+        enum prodgroup
+        {
+            Одяг,
+            Взуття,
+            Електротовари
+        }
+
+        enum Product
+        {
+            Шорти,
+            Футболка,
+            Джинси,
+            Крокси,
+            Кросівки,
+            Босоніжки,
+            Мікрохвильовка,
+            Холодильник,
+            Тостер
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Список товарів: ");
+            
+            Console.WriteLine($"{(int)Product.Шорти} - Шорти");
+            Console.WriteLine($"{(int)Product.Футболка} - Футболка");
+            Console.WriteLine($"{(int)Product.Джинси} - Джинси");
+            Console.WriteLine($"{(int)Product.Крокси} - Крокси");
+            Console.WriteLine($"{(int)Product.Кросівки} - Кросівки");
+            Console.WriteLine($"{(int)Product.Босоніжки} - Босоніжки");
+            Console.WriteLine($"{(int)Product.Мікрохвильовка} - Мікрохвильовка");
+            Console.WriteLine($"{(int)Product.Холодильник} - Холодильник");
+            Console.WriteLine($"{(int)Product.Тостер} - Тостер");
+            Console.WriteLine();
+
+            Console.Write("Введіть через кому номери продуктів, які ви хочете купити: ");
+            
+            string a = Console.ReadLine();
+            string[] prodnum = a.Split(',');
+
+            Console.WriteLine();
+
+            Console.WriteLine("Вибрані продукти:");
+            
+            foreach (string productnumber in prodnum)
+            {
+                if (int.TryParse(productnumber, out int number))
+                {
+                    if (Enum.IsDefined(typeof(Product), number))
+                    {
+                        Console.WriteLine(Enum.GetName(typeof(Product), number));
+                    }
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Список товарів за групами:");
+            Console.WriteLine("Одяг:");
+            Console.WriteLine($"{(int)Product.Шорти} - Шорти");
+            Console.WriteLine($"{(int)Product.Футболка} - Футболка");
+            Console.WriteLine($"{(int)Product.Джинси} - Джинси");
+            Console.WriteLine();
+            Console.WriteLine("Взуття:");
+            Console.WriteLine($"{(int)Product.Крокси} - Крокси");
+            Console.WriteLine($"{(int)Product.Кросівки} - Кросівки");
+            Console.WriteLine($"{(int)Product.Босоніжки} - Босоніжки");
+            Console.WriteLine();
+            Console.WriteLine("Електротовари:");
+            Console.WriteLine($"{(int)Product.Мікрохвильовка} - Мікрохвильовка");
+            Console.WriteLine($"{(int)Product.Холодильник} - Холодильник");
+            Console.WriteLine($"{(int)Product.Тостер} - Тостер");
+            Console.WriteLine();
+            Console.WriteLine("Автор програми: Подлесний Владислав Олексійович");
+        }
+    }
+}
