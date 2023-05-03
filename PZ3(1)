@@ -1,0 +1,21 @@
+using System;
+
+namespace Prog
+{
+ class Program
+ {
+   static void Main() 
+   {
+     float i;
+     i = 0;
+ 
+     Console.Write("Введіть цифру: ");
+     i = (float)Convert.ToDouble (Console.ReadLine());
+     
+     float a= (float)Math.Pow(i*2,0.5);
+     float end = (float)Math.Pow(a+2, 0.5);
+ 
+     Console.WriteLine("Відповідь="+end);
+   }
+ }
+}
